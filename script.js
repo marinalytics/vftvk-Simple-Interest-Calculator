@@ -5,11 +5,11 @@ function compute()
     var years = document.getElementById("years").value;
     var interest = principal * rate * years / 100;
     var year = new Date().getFullYear() + parseInt(years);
-    if(principal<=0) {
+    if(principal<=0 || principal=='') {
         alert("Enter a positive number")
         document.getElementById('principal').focus()
     } else {
-        document.getElementById("result").innerText="If you deposit "+principal+",\n at an interest rate of "+rate+"%,\n You will receive an amount of "+interest+",\n in the year "+year+"\n"
+        document.getElementById("result").innerText="If you deposit "+"<span class='highlight'>"+principal+"</span>"+",\n at an interest rate of "+"<span class='highlight'>"+rate+"</span>"+"%,\n You will receive an amount of "+"<span class='highlight'>"+interest+"</span>"+",\n in the year "+"<span class='highlight'>"+year+"</span>"+"\n"
     }
 }
         
